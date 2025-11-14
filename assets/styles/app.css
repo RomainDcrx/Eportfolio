@@ -1,3 +1,104 @@
 body {
     background-color: skyblue;
 }
+:root {
+    --qz-bg: #f8f5f9;       
+    --qz-border: #9b72cf;  
+    --qz-text: #593196;    
+    --qz-hover-bg: #593196; 
+    --qz-hover-text: #ffffff;
+}
+
+
+.grid-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 40px;
+}
+
+
+.section-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    background: var(--qz-bg);
+    color: var(--qz-text);
+
+    border: 2px solid var(--qz-border);
+    border-radius: 14px;
+
+    padding: 45px 20px;
+    font-size: 24px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.section-card:hover {
+    background: var(--qz-hover-bg);
+    color: var(--qz-hover-text);
+    transform: scale(1.05);
+}
+.grid-sections:has(.section-card:nth-child(3):last-child) .section-card:nth-child(3) {
+    grid-column: 1 / 3;      
+    justify-content: center; 
+    width: 50%;              
+    margin: 0 auto;     
+}
+#footer-full {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+/* Boîte un peu plus grande */
+.footer-content-medium {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px 0; /* plus grand que 10px */
+}
+
+/* Ligne des icônes, plus espacée */
+.footer-row {
+    display: flex;
+    justify-content: center;
+    gap: 45px; /* plus large */
+    font-size: 17px; /* un peu plus grand */
+}
+
+/* Icônes */
+.footer-row i {
+    margin-right: 6px;
+    color: #e4d2ff;
+    font-size: 20px; /* légèrement plus grand */
+}
+
+/* Liens */
+.footer-row a {
+    color: #e4d2ff;
+    text-decoration: none;
+}
+
+.footer-row a:hover {
+    text-decoration: underline;
+}
+
+/* Copyright */
+.footer-copy {
+    text-align: center;
+    margin: 8px 0 0 0; /* espace un peu plus grand */
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* Hauteur réservée (ajustée) */
+body {
+    padding-bottom: 150px !important; /* adapté à la nouvelle hauteur */
+}
