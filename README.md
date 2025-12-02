@@ -1,16 +1,16 @@
 Pour récup le projet : 
-  git clone https...
+  - git clone https...
 rentrer dans le projet : 
-  cd Eportfolio 
+  - cd Eportfolio 
 Installer les dépendances :
-  composer install
+  - composer install
 Avoir accès au code :
-  open folder -> Windows(C:)\Utilisateurs\Admin\Eportfolio
+  - open folder -> Windows(C:)\Utilisateurs\Admin\Eportfolio
 Pour sauvegarder mon nouveau code sur Github :
   - git add
   - git commit -m "message"
   - git push origin main
 Pour lancer serveur :
-  symfony server : start
+  - symfony server:start
 Pour arreter serveur :
-  symfony server : stop
+  - symfony server:stop
