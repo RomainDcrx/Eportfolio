@@ -68,4 +68,18 @@ final class BlogController extends AbstractController
             'controller_name' => 'Programmer',
         ]);
     }
+    #[Route('/Hobbies/Activités', name: 'activites')]
+    public function Activités(): Response
+    {
+        return $this->render('Hobbies/activites.html.twig', [
+            'controller_name' => 'Activites',
+        ]);
+    }
+    #[Route('/Hobbies/Passions', name: 'passions')]
+    public function Passions(): Response
+    {
+        return $this->render('Hobbies/passions.html.twig', [
+            'controller_name' => 'Passions',
+        ]);
+    }
 }
