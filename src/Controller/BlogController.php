@@ -82,4 +82,19 @@ final class BlogController extends AbstractController
             'controller_name' => 'Passions',
         ]);
     }
+    #[Route('/CV/Expériences', name: 'expériences')]
+    public function Expériences(): Response
+    {
+        return $this->render('CV/experiences.html.twig', [
+            'controller_name' => 'Experiences',
+        ]);
+    }
+    #[Route('/CV/Diplômes', name: 'diplômes')]
+    public function Diplômes(): Response
+    {
+        return $this->render('CV/diplomes.html.twig', [
+            'controller_name' => 'Diplomes',
+        ]);
+    }
+
 }
