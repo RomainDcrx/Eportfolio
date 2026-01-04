@@ -97,4 +97,12 @@ final class BlogController extends AbstractController
         ]);
     }
 
+    #[Route('/CV/PDF', name: 'pdf')]
+    public function PDF(): Response
+    {
+        return $this->render('CV/pdf.html.twig', [
+            'controller_name' => 'Pdf',
+        ]);
+    }
+
 }

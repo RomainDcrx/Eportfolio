@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bienvenue !{% endblock %}
+{% block title %}Eportfolio{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,41 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Compétence : Programmer</h1>
+    <h1>Télécharger mon CV en pdf</h1>
 
-    <a href="https://docs.google.com/document/d/1B_U6FqZLWeFnGoXr--jOFQiy4kAimtny/edit?usp=sharing&ouid=115482077810493883746&rtpof=true&sd=true" class="btn-lien">AC 13.03 : Traduire un algorithme, dans un langage et pour un environnement donné</a><br><br>
-    <a href="https://docs.google.com/document/d/1m-bgLQq9V2aNLL2AxDG01T9X3TBjtqU0/edit?usp=sharing&ouid=115482077810493883746&rtpof=true&sd=true" class="btn-lien">Analyse réflexive -- AC 13.03 : Traduire un algorithme, dans un langage et pour un environnement donné</a><br><br>
-    <ul>
-        <footer id="footer-full">
+    Pour télécharger mon cv veuillez remplir ce court formulaire <br><br>
+        
+        <label>Nom :</label>
+    <input type="text" id="nom" placeholder="Votre nom"><br><br>
+    
+    <label>Email :</label>
+    <input type="email" id="email" placeholder="Votre email">
+    
+    <br><br>
+    <button onclick="telechargerPDF()">Télécharger PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        function telechargerPDF() {
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            
+            if (!nom || !email) {
+                alert('Remplissez tous les champs !');
+                return;
+            }
+            
+            const link = document.createElement('a');
+            link.href = "{{ asset ('Romain_Ducreux_CV.pdf')}}"
+            link.download = 'Romain_Ducreux_CV.pdf';
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+        </section>
+                <footer id="footer-full">
             <div class="footer-content-medium">
 
                 <div class="footer-row">
@@ -40,7 +69,6 @@
 
             </div>
         </footer>
-
     </ul>
 </div>
 {% endblock %}
